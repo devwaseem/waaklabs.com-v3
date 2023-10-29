@@ -1,0 +1,130 @@
+---
+import HoverScrollText from "./hover-scroll-text.astro";
+import { services } from "../data/services";
+import { socialLinks } from "../data/social";
+
+interface Link {
+    name: string;
+    url: string;
+}
+
+interface SectionLinks {
+    name: string;
+    links: Link[];
+}
+
+const sectionLinks: SectionLinks[] = [
+    {
+        name: "Services",
+        links: services.map((service) => ({
+            name: service.title,
+            url: "/services#" + service.id,
+        })),
+    },
+    {
+        name: "Social",
+        links: socialLinks.map((link) => ({
+            name: link.name,
+            url: link.url,
+        })),
+    },
+];
+
+const links: Link[] = [
+    {
+        name: "Works",
+        url: "/works",
+    },
+    {
+        name: "Services",
+        url: "/services",
+    },
+    {
+        name: "About Us",
+        url: "/about",
+    },
+    {
+        name: "Contact",
+        url: "/contact",
+    },
+];
+---
+
+<>
+    <button
+        @click="$store.NavMenu.toggleMenu()"
+        class="group fixed right-6 top-8 z-[100] flex cursor-pointer flex-row items-center gap-3 overflow-hidden pt-0.5 text-xs font-medium uppercase will-change-transform md:right-10">
+        <div
+            class="transform-translate duration-500 will-change-transform group-hover:translate-x-1">
+            <div
+                :class="$store.NavMenu.isMenuOpen ? '-translate-y-full text-white' : 'translate-y-0'"
+                class="transition-all duration-500">
+                MENU
+            </div>
+            <div
+                x-cloak
+                :class="$store.NavMenu.isMenuOpen ? 'translate-y-0 text-white' : 'translate-y-full'"
+                class="absolute inset-0 transition-all duration-500">
+                CLOSE
+            </div>
+        </div>
+        <div class="flex flex-col gap-1">
+            <div
+                :class="$store.NavMenu.isMenuOpen ? 'translate-y-1 bg-white' : 'translate-y-0'"
+                class="transition-translate h-0.5 w-8 bg-primary-800 duration-500">
+            </div>
+            <div
+                :class="$store.NavMenu.isMenuOpen ? '-translate-y-1 opacity-0 bg-white' : 'translate-y-0 opacity-100'"
+                class="h-0.5 w-8 bg-primary-800 transition-all duration-500">
+            </div>
+        </div>
+    </button>
+    <div
+        x-cloak
+        x-show="$store.NavMenu.isMenuOpen"
+        x-trap.noscroll="$store.NavMenu.isMenuOpen"
+        x-collapse.duration.1000ms
+        id="menu-layer"
+        class="fixed inset-0 z-[99] h-screen w-screen bg-primary-800 text-white will-change-transform">
+        <div
+            :class="$store.NavMenu.isMenuOpen ? 'opacity-100' : 'opacity-0'"
+            class="container mx-auto flex h-full max-w-7xl flex-col gap-16 overflow-scroll px-6 pb-10 pt-24 transition-opacity duration-500 md:p-20 lg:flex-row lg:gap-60">
+            <div
+                id="menu-big-links"
+                class="group flex h-full flex-1 flex-col justify-center gap-6 transition-transform hover:text-white/20 md:gap-10">
+                {
+                    links.map((link) => (
+                        <a
+                            @click="$store.NavMenu.toggleMenu()"
+                            href={link.url}
+                            class="text-5xl font-bold transition-transform duration-500 hover:translate-x-4 hover:text-white md:text-[100px]">
+                            {link.name}
+                        </a>
+                    ))
+                }
+            </div>
+            <div x-data class="flex flex-1 flex-col justify-center gap-20">
+                {
+                    sectionLinks.map((section) => (
+                        <div class="flex w-full flex-col gap-6">
+                            <div class="w-full border-b border-white/20 pb-4 text-xl font-medium md:text-3xl">
+                                {section.name}
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                {section.links.map((link) => (
+                                    <a
+                                        @click="$store.NavMenu.toggleMenu()"
+                                        href={link.url}>
+                                        <HoverScrollText>
+                                            {link.name}
+                                        </HoverScrollText>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</>

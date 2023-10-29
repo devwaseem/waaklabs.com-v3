@@ -1,0 +1,28 @@
+---
+import MarqueeText from "../../components/marquee-text.astro";
+import ParallaxMove from "../../components/parallax-move.astro";
+---
+
+<ParallaxMove>
+    <div class="bg-white pt-40">
+        <MarqueeText text="OUR SERVICES" />
+        <div class="mx-10 h-1 border-t border-gray-200"></div>
+        <div class="mx-auto max-w-7xl px-10">
+            <div class="flex flex-row gap-20 md:mt-10 lg:mt-16">
+                <div
+                    class="hidden flex-1 pt-2 text-center font-mono text-xs font-bold uppercase lg:block">
+                    What we do
+                </div>
+                <div
+                    class="max-w-2xl text-lg font-medium md:text-3xl lg:text-4xl">
+                    Empower your online presence and elevate your brand by
+                    leveraging our vast expertise
+                </div>
+            </div>
+            <div class="mt-10 max-w-sm font-medium">
+                We offer a wide range of services designed to make your brand
+                thrive in a rapidly changing landscape.
+            </div>
+        </div>
+    </div>
+</ParallaxMove>

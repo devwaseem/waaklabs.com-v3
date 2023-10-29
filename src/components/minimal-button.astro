@@ -1,0 +1,35 @@
+---
+interface Props {
+    text: string;
+    href: string;
+}
+
+const { text, href } = Astro.props;
+---
+
+<a
+    href={href}
+    class="group mt-4 flex max-w-fit flex-row items-center gap-2 rounded bg-gray-100 py-1 pl-3 pr-1 font-mono text-xs font-bold uppercase transition-colors duration-300 will-change-transform hover:bg-gray-200">
+    <div class="transition-transform duration-300 group-hover:translate-x-1">
+        {text}
+    </div>
+    <div
+        class="ml-6 inline-block rounded bg-gray-200 transition-all duration-300 group-hover:-translate-x-1 group-hover:bg-gray-300">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="p-1"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l14 0"></path>
+            <path d="M15 16l4 -4"></path>
+            <path d="M15 8l4 4"></path>
+        </svg>
+    </div>
+</a>

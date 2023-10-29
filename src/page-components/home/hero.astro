@@ -1,0 +1,37 @@
+---
+import ParallaxMove from "../../components/parallax-move.astro";
+import MarqueeText from "../../components/marquee-text.astro";
+---
+
+<ParallaxMove startAt={100} padding={false}>
+    <div
+        id="hero"
+        class="relative z-0 flex h-screen transform-gpu flex-col items-center justify-center overflow-hidden bg-white">
+        <div
+            class="pointer-events-none absolute inset-0 z-0 grid grid-cols-3 pt-40 opacity-10">
+            <div class="bg-primary-700 blur-3xl"></div>
+            <div></div>
+            <div class="bg-primary-700 blur-3xl"></div>
+            <div></div>
+            <div class="bg-primary-700 blur-3xl"></div>
+            <div></div>
+        </div>
+        <div
+            class="flex w-full flex-col justify-center p-6 md:flex-row md:items-center md:p-10">
+            <div
+                class="mb-6 font-mono text-xs font-bold uppercase md:mb-0 md:p-10 md:text-right">
+                Welcome
+            </div>
+            <div class="max-w-xl flex-1 text-3xl leading-tight md:p-10">
+                <span>We are Waak Labs.</span>
+                <span class="mt-6 block md:ml-1 md:mt-0 md:inline"
+                    >We design & develop digital products.</span
+                >
+            </div>
+        </div>
+        <div
+            class="absolute bottom-[-4%] hidden overflow-hidden will-change-transform md:block lg:bottom-[-10%]">
+            <MarqueeText text="WE ARE WAAKLABS" disableOnSmallDevices />
+        </div>
+    </div>
+</ParallaxMove>

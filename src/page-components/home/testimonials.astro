@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import AlloLogo from "../../assets/images/clients/Allospaces.png";
+import BigTitle from "../../components/big-title.astro";
+import ParallaxMove from "../../components/parallax-move.astro";
+
+interface Testimonial {
+    logo: ImageMetadata;
+    company: string;
+    name: string;
+    designation: string;
+    testimonial: string;
+}
+
+const testimonials: Testimonial[] = [
+    {
+        logo: AlloLogo,
+        name: "Pranav Ashok",
+        company: "Allospaces",
+        designation: "Co-Founder, Allospaces",
+        testimonial:
+            "Waseem has a true passion for building. His ability to break down a complex problem and structure it out is fantastic and he was instrumental in building allo spaces for us! He is proactive and preempts risks and downsides of, minimising them through creative solutions. A must have for anyone building an MVP!",
+    },
+];
+
+interface Props {
+    disable_parallax?: boolean;
+}
+const { disable_parallax = false } = Astro.props;
+---
+
+<ParallaxMove disable={disable_parallax}>
+    <section id="testimonials" class="relative z-20 bg-white pb-40">
+        <div class="mx-auto max-w-7xl px-6 pt-20 md:px-10">
+            <BigTitle
+                title="Stories"
+                caption="Testimonials"
+                description="See what our customers and partners have to say about us."
+            />
+            <div class="mt-24 grid grid-cols-1 lg:grid-cols-2">
+                {
+                    testimonials.map((testimonial) => (
+                        <div class="flex h-[600px] flex-col justify-between bg-gray-50 p-10">
+                            <div>
+                                <Image
+                                    src={testimonial.logo}
+                                    alt={`Logo of ${testimonial.company}`}
+                                    class="inline-block w-[200px] object-cover"
+                                />
+                                <div class="mt-6 text-lg">
+                                    {testimonial.testimonial}
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold">
+                                    {testimonial.name}
+                                </div>
+                                <div>{testimonial.designation}</div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</ParallaxMove>

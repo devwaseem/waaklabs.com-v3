@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import { v4 as uuidv4 } from "uuid";
+
+interface Props {
+    title: string;
+    description: string;
+    image: ImageMetadata;
+}
+
+const id = "work-" + uuidv4();
+
+const { title, description, image } = Astro.props;
+---
+
+<>
+    <div id={id} class="will-change-transform">
+        <div class="text-center text-5xl font-bold md:text-8xl lg:text-9xl">
+            {title}
+        </div>
+        <div
+            class="mx-auto mt-10 max-w-4xl text-center text-lg md:text-2xl lg:text-3xl">
+            {description}
+        </div>
+    </div>
+    <div class="relative z-20 mt-20">
+        <Image
+            src={image}
+            alt={`Image of ${title}`}
+            width="1920"
+            height="1080"
+            class="mx-auto w-full max-w-full lg:max-w-5xl"
+        />
+    </div>
+    <script define:vars={{ id }}>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.screen.width > 400) {
+                setupProjectSlideDownAnimation(id);
+            }
+        });
+    </script>
+</>

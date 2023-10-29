@@ -1,0 +1,28 @@
+---
+const idNum = Math.ceil(Math.random() * 100 + new Date().getTime());
+const id = `parallax-move-${idNum}`;
+
+interface Props {
+    startAt?: number;
+    disable?: boolean;
+    padding?: boolean;
+}
+
+const { startAt = 100, disable = false, padding = true } = Astro.props;
+---
+
+<div id={id}>
+    <div class={!disable ? (padding ? "md:pb-[400px]" : "") : ""}>
+        <slot />
+    </div>
+</div>
+
+<script is:inline define:vars={{ id, startAt, disable }}>
+    if (!disable) {
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.screen.width > 400) {
+                setupParallaxMove(id, startAt);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,34 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import WorkCard from "../../components/work-card.astro";
+
+const allWorks = [
+    await getEntry("works", "brickell"),
+    await getEntry("works", "allospaces"),
+    await getEntry("works", "tempbox"),
+    await getEntry("works", "bridge"),
+    await getEntry("works", "contento"),
+    await getEntry("works", "jobskills"),
+    await getEntry("works", "adwiser"),
+    await getEntry("works", "laagom"),
+    await getEntry("works", "zeesh"),
+];
+---
+
+<div class="mx-auto my-60 max-w-7xl px-6">
+    <div class="grid grid-cols-1 gap-24 md:gap-16 lg:grid-cols-2 xl:gap-20">
+        {
+            allWorks.map((work) => {
+                const services = work.data.services.slice(0, 3).join(", ");
+                return (
+                    <WorkCard
+                        href={`/works/${work.slug}`}
+                        image={work.data.banner_image}
+                        title={work.data.title}
+                        services={services}
+                    />
+                );
+            })
+        }
+    </div>
+</div>

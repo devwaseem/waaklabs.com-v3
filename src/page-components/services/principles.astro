@@ -1,0 +1,79 @@
+---
+import BigTitle from "../../components/big-title.astro";
+interface Principle {
+    index: string;
+    title: string;
+    description: string;
+}
+
+const principles: Principle[] = [
+    {
+        index: "01",
+        title: "Innovation at the core",
+        description:
+            "Innovation is not just a buzzword; it's our guiding principle. We continuously seek fresh ideas and cutting-edge solutions to push the boundaries of what's possible in the digital realm.",
+    },
+    {
+        index: "02",
+        title: "User centric focus",
+        description:
+            "Every digital project we undertake begins with the end-user in mind. We prioritize user experience and design solutions that are not only visually appealing but also intuitive.",
+    },
+    {
+        index: "03",
+        title: "Collaboration and communication",
+        description:
+            "Collaboration is at the heart of our client and team relationships. We believe that the best outcomes are achieved through open and transparent communication.",
+    },
+    {
+        index: "04",
+        title: "Data driven decision making",
+        description:
+            "Data is the foundation of our strategy. We harness the power of analytics, metrics, and user insights to make informed decisions. This allows us to continually refine and optimize.",
+    },
+];
+---
+
+<div class="relative z-10 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-10 py-20">
+        <BigTitle
+            title="Priciples"
+            caption="How We Work"
+            description="There's a few core principles that define us as a team and are absolute key to our success"
+        />
+        <!-- <div class="border-b border-gray-200 text-[220px] font-bold uppercase">
+        Principles
+    </div>
+    <div class="flex max-w-7xl flex-row gap-20 md:mt-10 lg:mt-16">
+        <div
+            class="hidden flex-1 pt-2 text-center text-xs font-semibold uppercase lg:block">
+            How we work
+        </div>
+        <div class="max-w-2xl">
+            <div class="text-xl font-medium md:text-3xl lg:text-5xl">
+                There's a few core principles that define us as a team and are
+                absolute key to our success
+            </div>
+        </div>
+    </div> -->
+        <div class="mx-auto my-20 flex max-w-7xl flex-col items-center">
+            {
+                principles.map((approach) => (
+                    <div class="flex flex-row items-start gap-10 border-b border-gray-200 py-20 first:border-y">
+                        <div class="text mt-2 font-medium">
+                            {approach.index}
+                        </div>
+                        <div class="">
+                            <div class="text-2xl font-medium">
+                                {approach.title}
+                            </div>
+                            <div class="mt-4 max-w-2xl text-lg">
+                                {approach.description}
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>

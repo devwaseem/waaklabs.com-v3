@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import MinimalButton from "./minimal-button.astro";
+interface Props {
+    image: ImageMetadata;
+    title: string;
+    services: string;
+    href: string;
+}
+const { image, title, services, href } = Astro.props;
+---
+
+<a href={href} class="group flex flex-col">
+    <div
+        class="h-[300px] w-full overflow-hidden rounded md:h-[500px] xl:h-[500px]">
+        <Image
+            src={image}
+            alt={`Image of ${title}`}
+            width="1920"
+            height="1080"
+            class="h-full w-full object-cover object-left-top transition-transform duration-500 group-hover:translate-x-6"
+        />
+    </div>
+    <div class="my-6 border-t"></div>
+    <div class="flex flex-col justify-between md:flex-row md:items-center">
+        <div class="text-2xl font-medium">
+            {title}
+        </div>
+        <div class="text-lg">{services}</div>
+    </div>
+</a>

@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import Adwiser from "../../assets/images/clients/Adwiser.png";
+import Allospaces from "../../assets/images/clients/Allospaces.png";
+import ASCI from "../../assets/images/clients/ASCI.png";
+import Brickell from "../../assets/images/clients/Brickell.png";
+import Bridge from "../../assets/images/clients/Bridge.png";
+import Contento from "../../assets/images/clients/Contento.png";
+import Laagom from "../../assets/images/clients/Laagom.png";
+import Stashly from "../../assets/images/clients/Stashly.png";
+import Zeesh from "../../assets/images/clients/Zeesh.png";
+import ParallaxMove from "../../components/parallax-move.astro";
+import BigTitle from "../../components/big-title.astro";
+
+interface ClientLogo {
+    image: ImageMetadata;
+    alt: string;
+}
+
+const clients_list: ClientLogo[] = [
+    { image: ASCI, alt: "Logo of ASCI" },
+    { image: Adwiser, alt: "Logo of Adwiser, Rupee Symbol" },
+    { image: Allospaces, alt: "Logo of Allospaces" },
+    { image: Brickell, alt: "Logo of Brickell.com" },
+    { image: Bridge, alt: "Logo of Bridge" },
+    { image: Contento, alt: "Logo of Contento" },
+    { image: Laagom, alt: "Logo of Laagom" },
+    { image: Stashly, alt: "Logo of Stashly" },
+    { image: Zeesh, alt: "Logo of Zeesh" },
+];
+
+let clients = clients_list;
+for (let i = 0; i < 3; i++) {
+    clients.push(...clients_list);
+}
+---
+
+<section id="clients" class="relative z-20 bg-gray-50 pb-40">
+    <div>
+        <div class="mx-auto max-w-7xl px-6 pt-20 md:px-10">
+            <BigTitle
+                title="Clients"
+                caption="Our Partners"
+                description="Building strong and enduring partnerships with our clients is our top priority. These clients have all put their trust in us."
+            />
+        </div>
+
+        <div class="overflow-hidden">
+            <div id="client_list" class="mt-20 flex flex-row gap-20">
+                {
+                    clients.map((client) => (
+                        <Image
+                            src={client.image}
+                            width={500}
+                            height={100}
+                            alt={client.alt}
+                            class="w-[250px]"
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const clients = document.querySelector("#client_list");
+        const clientsWidth = clients.getBoundingClientRect().width * 3;
+        gsap.to(clients, {
+            x: -clientsWidth,
+            repeat: -1,
+            duration: 40,
+            ease: "linear",
+            scrollTrigger: {
+                trigger: clients,
+                toggleActions: "play pause resume none",
+            },
+        });
+    });
+</script>

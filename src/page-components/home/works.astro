@@ -1,0 +1,79 @@
+---
+import ParallaxProject from "../../components/parallax-project.astro";
+import ParallaxMove from "../../components/parallax-move.astro";
+
+import { getEntry, type CollectionEntry } from "astro:content";
+import BigTitle from "../../components/big-title.astro";
+import HoverScrollText from "../../components/hover-scroll-text.astro";
+import BoldButton from "../../components/bold-button.astro";
+
+export const projects = [
+    await getEntry("works", "brickell"),
+    await getEntry("works", "allospaces"),
+    await getEntry("works", "contento"),
+];
+---
+
+<section id="works" class="relative z-20 bg-white pb-20">
+    <div class="mx-auto max-w-7xl px-6 pt-20 md:px-20 md:pb-10">
+        <BigTitle
+            title="Work"
+            caption="Recent Work"
+            description="Catch a glimpse of our recent work for our amazing clients"
+        />
+        <div class="my-10 flex items-center justify-center md:my-20">
+            <BoldButton href="/works" text="View All" showArrow />
+        </div>
+    </div>
+
+    <div class="px-6 md:px-20">
+        {
+            projects.map((project) => (
+                <div class="py-20 md:py-40">
+                    <a href="#">
+                        <ParallaxProject
+                            title={project.data.title}
+                            description={project.data.short_description}
+                            image={project.data.banner_image}
+                        />
+                    </a>
+                </div>
+            ))
+        }
+        <div class="flex flex-col items-center py-20">
+            <div class="text-center text-4xl font-bold md:text-6xl">
+                And More...
+            </div>
+            <div class="mx-auto mt-6 max-w-xl text-center text-lg md:text-2xl">
+                View our other projects, crafted for both our valued clients and
+                our creative passion
+            </div>
+            <div class="mt-10">
+                <BoldButton href="/works" text="View All" showArrow />
+            </div>
+        </div>
+    </div>
+    <!-- <div class="mt-20 grid grid-cols-2 2xl:max-w-7xl">
+            {
+                projects.map((project) => (
+                    <a href="" class="group relative overflow-hidden">
+                        <Image
+                            src={project.data.banner_image}
+                            alt=""
+                            width="1920"
+                            height="1080"
+                            class="h-[600px] object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-x-0 bottom-0 top-1/2 z-20 flex flex-col justify-end bg-gradient-to-b from-black/0 to-black/90 p-8 text-white opacity-100 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="text-4xl font-bold">
+                                {project.data.title}
+                            </div>
+                            <div class="mt-2 max-w-lg">
+                                {project.data.short_description}
+                            </div>
+                        </div>
+                    </a>
+                ))
+            }
+        </div> -->
+</section>

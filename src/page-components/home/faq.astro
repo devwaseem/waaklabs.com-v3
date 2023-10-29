@@ -1,0 +1,132 @@
+---
+import BigTitle from "../../components/big-title.astro";
+
+interface FAQ {
+    question: string;
+    answer: string;
+}
+
+const faqList: FAQ[] = [
+    {
+        question: "What services do you offer?",
+        answer: "We provide a range of web design services, including custom website design, e-commerce development, and website maintenance.",
+    },
+    {
+        question:
+            "I don't have a fixed scope. things might change. How much does a website/app cost to build?",
+        answer: "For a project with a flexible scope where requirements may change, we offer a retainer model. You'll pay a fixed monthly price, and within that timeframe, you can provide tasks and adjustments. Any additional tasks beyond the scope of the current month will be accommodated in the following months. This approach allows us to adapt to evolving project needs while ensuring a predictable cost structure for your website or app development. Please contact us for the quote.",
+    },
+    {
+        question:
+            "I have a fixed scope. How much does a website/app cost to build?",
+        answer: "For a project with a fixed scope, we provide a customized quote based on your specific requirements. Our pricing is determined by the complexity and features of your website or app. You'll pay 30% of the estimated cost upfront to kickstart the project, and the remaining payments will be structured in milestone-based installments. We'll work closely with you to understand your project's needs and provide a transparent and detailed cost estimate to ensure your project is completed within your budget while ensuring payments are aligned with project progress. Please contact us for the quote.",
+    },
+    {
+        question: "How long does it take to design a website?",
+        answer: "The timeline depends on the complexity of your project. We'll provide an estimated timeframe during the consultation.",
+    },
+    {
+        question: "Do you provide website hosting and domain registration?",
+        answer: "Yes, we offer hosting and domain registration services to streamline your website setup.",
+    },
+    {
+        question: "Can you redesign an existing website?",
+        answer: "Absolutely. We offer website redesign services to give your site a fresh and modern look.",
+    },
+    {
+        question: "What tech stack do you use for web development?",
+        answer: "We employ a robust tech stack for web development, utilizing battle-tested technologies like Django and optimizing the process with tools such as HTMX and Alpine to enhance speed and efficiency. We rely on AWS for our hosting needs and leverage Docker for efficient containerization. Our approach is centered on keeping the infrastructure lean and fast, ensuring ease of maintenance and optimal performance.",
+    },
+    {
+        question: "Do you offer SEO services for websites?",
+        answer: "Yes, we provide search engine optimization services to improve your website's visibility and rankings.",
+    },
+    {
+        question: "Will my website be mobile-responsive?",
+        answer: "Yes, all our websites are designed to be mobile-friendly for a seamless user experience on all devices.",
+    },
+    {
+        question: "Do you provide ongoing website maintenance?",
+        answer: "We offer maintenance and support packages to keep your website up to date and secure.",
+    },
+    {
+        question: "Can I see examples of your previous work?",
+        answer: "Of course, we have a portfolio of our past projects to showcase our design and development expertise.",
+    },
+    {
+        question:
+            "What is the process for starting a web design project with your agency?",
+        answer: "It typically involves a consultation, proposal, design phase, development, testing, and site launch. We'll guide you through each step.",
+    },
+    {
+        question: "How do I request a quote or get in touch?",
+        answer: "You can request a quote or contact us by using the live chat on the bottom right of this website, or you can email us to hello@waaklabs.com",
+    },
+];
+---
+
+<section id="testimonials" class="relative z-20 w-full bg-gray-50">
+    <div class="container mx-auto max-w-7xl px-6 py-20 md:px-20">
+        <BigTitle
+            title="FAQ"
+            caption="Frequently Asked Questions"
+            description="Instant answers to your questions. For more, contact us."
+        />
+        <div x-data="FAQ" class="mx-auto mt-12 md:mt-24 lg:max-w-2xl">
+            {
+                faqList.map((faq, index) => (
+                    <div id={`faq-${index}`} class="py-6">
+                        <div
+                            @click={`toggleFAQ(${index})`}
+                            class="flex cursor-pointer flex-row items-start justify-between gap-3 ">
+                            <div class="text-lg font-medium">
+                                {faq.question}
+                            </div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="shrink-0 transition-transform duration-300 will-change-transform"
+                                x-bind:class={`isFAQSelected(${index}) ? '-rotate-180': 'rotate-0'`}
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                />
+                                <path d="M6 9l6 6l6 -6" />
+                            </svg>
+                        </div>
+                        <div x-show={`isFAQSelected(${index})`} x-collapse>
+                            <div class="pt-6">{faq.answer}</div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    document.addEventListener("alpine:init", () => {
+        //@ts-ignore
+        Alpine.data("FAQ", () => ({
+            selectedFAQ: 0,
+            toggleFAQ(id) {
+                if (this.selectedFAQ == id) {
+                    this.selectedFAQ = null;
+                } else {
+                    this.selectedFAQ = id;
+                }
+            },
+            isFAQSelected(id) {
+                return this.selectedFAQ == id;
+            },
+        }));
+    });
+</script>

@@ -1,0 +1,91 @@
+---
+import ParallaxMove from "../../components/parallax-move.astro";
+import BigTitle from "../../components/big-title.astro";
+
+interface Approach {
+    index: string;
+    title: string;
+    description: string;
+}
+
+const approaches: Approach[] = [
+    {
+        index: "01",
+        title: "Innovation",
+        description:
+            "We thrive on pushing the boundaries of creativity and technology. Our team constantly explores new ideas to ensure your brand remains ahead of the curve.",
+    },
+    {
+        index: "02",
+        title: "Collaboration",
+        description:
+            "We work closely with you, fostering open communication and collaboration every step of the way. Together, we create digital experiences that resonate.",
+    },
+    {
+        index: "03",
+        title: "Data-driven",
+        description:
+            "Data is king. We harness the power of analytics and insights to make informed decisions, fine-tuning strategies and campaigns for maximum impact",
+    },
+    {
+        index: "04",
+        title: "User-centric",
+        description:
+            "We put your audience at the center of everything we do. Every digital solution we create is not only visually stunning but also intuitive and engaging.",
+    },
+    {
+        index: "05",
+        title: "Custom solutions",
+        description:
+            "Your business is unique, and so are our solutions. We tailor our services to meet your specific objectives, ensuring a personalized approach that delivers.",
+    },
+    {
+        index: "06",
+        title: "Results",
+        description:
+            "We are driven by a commitment to excellence. Our focus is meeting and surpassing your expectations, delivering exceptional results that drive growth.",
+    },
+];
+---
+
+<ParallaxMove>
+    <div class="mx-auto max-w-7xl px-10 pb-20 pt-20">
+        <BigTitle
+            title="Approach"
+            caption="Our way of working"
+            description="Our approach is as distinct as your digital needs. We believe in the power of innovation and data-driven strategies."
+        />
+        <!-- <div class="border-b border-gray-200 text-[220px] font-bold uppercase">
+            Approach
+        </div> -->
+        <!-- <div class="flex max-w-7xl flex-row gap-20 md:mt-10 lg:mt-16">
+            <div
+                class="hidden flex-1 pt-2 text-center text-sm font-semibold uppercase lg:block">
+                Our way of working
+            </div>
+            <div class="max-w-2xl">
+                <div class="text-xl font-medium md:text-3xl lg:text-5xl">
+                    Our approach is as distinct as your digital needs. We
+                    believe in the power of innovation and data-driven
+                    strategies.
+                </div>
+            </div>
+        </div> -->
+        <div
+            class="mx-auto my-20 grid max-w-7xl grid-cols-1 gap-28 px-6 md:grid-cols-2 lg:my-40 lg:grid-cols-3">
+            {
+                approaches.map((approach) => (
+                    <div class="flex flex-col gap-6">
+                        <div class=" font-mono text-5xl font-medium lg:text-8xl">
+                            {approach.index}
+                        </div>
+                        <div class="text-3xl font-medium lg:text-4xl">
+                            {approach.title}
+                        </div>
+                        <div class="text-lg">{approach.description}</div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</ParallaxMove>

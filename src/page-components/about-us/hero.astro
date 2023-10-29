@@ -1,0 +1,30 @@
+---
+import MarqueeText from "../../components/marquee-text.astro";
+import ParallaxMove from "../../components/parallax-move.astro";
+---
+
+<ParallaxMove>
+    <div class="bg-white pt-40">
+        <MarqueeText text="ABOUT US" />
+        <div class="mx-10 h-1 border-t border-gray-200"></div>
+        <div class="mx-auto max-w-7xl px-10">
+            <div class="flex flex-row gap-20 md:mt-10 lg:mt-16">
+                <div
+                    class="hidden flex-1 pt-2 text-center font-mono text-xs font-bold uppercase lg:block">
+                    About us
+                </div>
+                <div
+                    class="max-w-2xl text-lg font-medium md:text-3xl lg:text-4xl">
+                    We are your strategic partner in navigating the
+                    ever-evolving digital landscape. Our passion for innovation,
+                    creativity, and cutting-edge technology drives us to deliver
+                    exceptional results.
+                </div>
+            </div>
+            <div class="mt-10 max-w-sm font-medium">
+                We craft bespoke solutions that not only meet your goals but
+                exceed your expectations
+            </div>
+        </div>
+    </div>
+</ParallaxMove>
