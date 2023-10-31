@@ -1,0 +1,60 @@
+---
+import { AstroSeo } from "@astrolib/seo";
+import Banner from "../assets/images/banner.png";
+const siteName = "Waak Labs";
+const title = "Waak Labs — World Class Web & Mobile App Development Services";
+const description =
+    "We are a full-service web and mobile app development company that helps businesses achieve their online potential.";
+const url = "https://waaklabs.com";
+---
+
+<>
+    <!-- <title>{title}</title>
+    <meta name="description" content={description} /> -->
+    <meta
+        name="robots"
+        content="index,follow,nosnippet,max-snippet:120,max-image-preview:large,noarchive,noimageindex,max-video-preview:-1,notranslate"
+    />
+    <!-- <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={url} />
+    <meta name="twitter:creator" content="@waaklabs" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={Banner.src} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content={siteName} /> -->
+    <AstroSeo
+        title={title}
+        description={description}
+        openGraph={{
+            url: url,
+            title: title,
+            description: description,
+            images: [
+                {
+                    url: Banner.src,
+                    width: Banner.width,
+                    height: Banner.height,
+                    alt: "Waaklabs - Design / Engineer / Grow",
+                    type: Banner.format,
+                },
+            ],
+            site_name: siteName,
+            profile: {
+                firstName: "Waseem",
+                lastName: "Akram",
+                gender: "Male",
+            },
+        }}
+        twitter={{
+            handle: "@waaklabs",
+            site: siteName,
+            cardType: "summary_large_image",
+        }}
+    />
+</>
