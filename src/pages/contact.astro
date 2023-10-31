@@ -3,10 +3,13 @@ import Layout from "../layouts/index.astro";
 import Hero from "../page-components/contact/hero.astro";
 import ContactOptions from "../page-components/contact/contact-options.astro";
 import Testimonials from "../page-components/home/testimonials.astro";
+import Faq from "../page-components/home/faq.astro";
+import ParallaxMove from "../components/parallax-move.astro";
 ---
 
 <Layout>
     <Hero />
     <ContactOptions />
-    <!-- <Testimonials disable_parallax /> -->
+    <Testimonials disable_parallax />
+    <Faq />
 </Layout>

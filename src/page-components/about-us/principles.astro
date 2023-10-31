@@ -9,27 +9,39 @@ interface Principle {
 const principles: Principle[] = [
     {
         index: "01",
-        title: "Innovation at the core",
+        title: "Client-Centricity",
         description:
-            "Innovation is not just a buzzword; it's our guiding principle. We continuously seek fresh ideas and cutting-edge solutions to push the boundaries of what's possible in the digital realm.",
+            "Our clients are at the heart of everything we do. We prioritize your needs, objectives, and vision, ensuring that every project aligns with your business goals.",
     },
     {
         index: "02",
-        title: "User centric focus",
+        title: "Innovation and Creativity",
         description:
-            "Every digital project we undertake begins with the end-user in mind. We prioritize user experience and design solutions that are not only visually appealing but also intuitive.",
+            "We foster a culture of innovation and creativity, pushing the boundaries of what's possible. Our solutions are infused with fresh ideas to stay ahead in the ever-evolving tech landscape.",
     },
     {
         index: "03",
-        title: "Collaboration and communication",
+        title: "Quality Assurance",
         description:
-            "Collaboration is at the heart of our client and team relationships. We believe that the best outcomes are achieved through open and transparent communication.",
+            "We maintain an unwavering commitment to quality. Rigorous testing and quality control are integral to our process, ensuring that the final product is of the highest standard.",
     },
     {
         index: "04",
-        title: "Data driven decision making",
+        title: "Transparency and Collaboration",
         description:
-            "Data is the foundation of our strategy. We harness the power of analytics, metrics, and user insights to make informed decisions. This allows us to continually refine and optimize.",
+            "Open communication and collaboration are core to our work. We engage you in every step of the project, ensuring your feedback and ideas are valued.",
+    },
+    {
+        index: "05",
+        title: "On-Time Delivery",
+        description:
+            "We are dedicated to delivering projects on time, ensuring they remain on schedule and within budget.",
+    },
+    {
+        index: "06",
+        title: "Ongoing Support",
+        description:
+            "Our team remains available even after project completion, ensuring the ongoing success of our collaboration.",
     },
 ];
 ---
@@ -39,23 +51,9 @@ const principles: Principle[] = [
         <BigTitle
             title="Priciples"
             caption="How We Work"
-            description="There's a few core principles that define us as a team and are absolute key to our success"
+            description="There's a few core principles that define us and are absolute key to our success"
         />
-        <!-- <div class="border-b border-gray-200 text-[220px] font-bold uppercase">
-        Principles
-    </div>
-    <div class="flex max-w-7xl flex-row gap-20 md:mt-10 lg:mt-16">
-        <div
-            class="hidden flex-1 pt-2 text-center text-xs font-semibold uppercase lg:block">
-            How we work
-        </div>
-        <div class="max-w-2xl">
-            <div class="text-xl font-medium md:text-3xl lg:text-5xl">
-                There's a few core principles that define us as a team and are
-                absolute key to our success
-            </div>
-        </div>
-    </div> -->
+
         <div class="mx-auto my-20 flex max-w-7xl flex-col items-center">
             {
                 principles.map((approach) => (
@@ -64,7 +62,7 @@ const principles: Principle[] = [
                             {approach.index}
                         </div>
                         <div class="">
-                            <div class="text-2xl font-medium">
+                            <div class="text-2xl font-medium 2xl:tracking-tight">
                                 {approach.title}
                             </div>
                             <div class="mt-4 max-w-2xl text-lg">

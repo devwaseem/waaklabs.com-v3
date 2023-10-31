@@ -1,9 +1,10 @@
 ---
 title: "Tempbox"
-short_description: "A Real Estate and Lifestyle Portal Serving the Brickell & Miami Real Estate & Condo Market."
+short_description: "Your Instant Disposable Email Solution on Mac"
 description: Tempbox is your solution for instant disposable emails on Mac, powered by the trusted Mail.tm service. Developed in-house by Waak Labs, Tempbox offers a range of features for your Mac that enhance your email experience.
 banner_image: "./images/tempbox/tempbox-mac.png"
-link: https://brickell.com
+link: https://tempbox.waseem.works
+link_button_text: View Live Site
 services:
     - Mac App
     - API

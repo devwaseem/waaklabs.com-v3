@@ -11,39 +11,39 @@ interface Approach {
 const approaches: Approach[] = [
     {
         index: "01",
-        title: "Innovation",
+        title: "Analysis",
         description:
-            "We thrive on pushing the boundaries of creativity and technology. Our team constantly explores new ideas to ensure your brand remains ahead of the curve.",
+            "We start by analyzing your goals, objectives, and vision to ensure our work aligns with your business.",
     },
     {
         index: "02",
-        title: "Collaboration",
+        title: "Customization",
         description:
-            "We work closely with you, fostering open communication and collaboration every step of the way. Together, we create digital experiences that resonate.",
+            "We design and develop custom solutions that cater to your unique needs and challenges.",
     },
     {
         index: "03",
-        title: "Data-driven",
+        title: "Collaboration",
         description:
-            "Data is king. We harness the power of analytics and insights to make informed decisions, fine-tuning strategies and campaigns for maximum impact",
+            "Our open and collaborative approach involves you in every step of the project, ensuring your feedback and ideas are valued.",
     },
     {
         index: "04",
-        title: "User-centric",
+        title: "Quality",
         description:
-            "We put your audience at the center of everything we do. Every digital solution we create is not only visually stunning but also intuitive and engaging.",
+            "Rigorous testing and quality control are integral to our process, ensuring a final product of the highest standard.",
     },
     {
         index: "05",
-        title: "Custom solutions",
+        title: "Punctuality",
         description:
-            "Your business is unique, and so are our solutions. We tailor our services to meet your specific objectives, ensuring a personalized approach that delivers.",
+            "We commit to delivering on time, so your projects remain on schedule and within budget.",
     },
     {
         index: "06",
-        title: "Results",
+        title: "Support",
         description:
-            "We are driven by a commitment to excellence. Our focus is meeting and surpassing your expectations, delivering exceptional results that drive growth.",
+            "Our  team remains available even after project completion, ensuring the ongoing success of our collaboration.",
     },
 ];
 ---
@@ -53,33 +53,17 @@ const approaches: Approach[] = [
         <BigTitle
             title="Approach"
             caption="Our way of working"
-            description="Our approach is as distinct as your digital needs. We believe in the power of innovation and data-driven strategies."
+            description="Crafting exceptional software isn't just about code; it's understanding your unique challenges, vision, and goals."
         />
-        <!-- <div class="border-b border-gray-200 text-[220px] font-bold uppercase">
-            Approach
-        </div> -->
-        <!-- <div class="flex max-w-7xl flex-row gap-20 md:mt-10 lg:mt-16">
-            <div
-                class="hidden flex-1 pt-2 text-center text-sm font-semibold uppercase lg:block">
-                Our way of working
-            </div>
-            <div class="max-w-2xl">
-                <div class="text-xl font-medium md:text-3xl lg:text-5xl">
-                    Our approach is as distinct as your digital needs. We
-                    believe in the power of innovation and data-driven
-                    strategies.
-                </div>
-            </div>
-        </div> -->
         <div
             class="mx-auto my-20 grid max-w-7xl grid-cols-1 gap-28 px-6 md:grid-cols-2 lg:my-40 lg:grid-cols-3">
             {
                 approaches.map((approach) => (
                     <div class="flex flex-col gap-6">
-                        <div class=" font-mono text-5xl font-medium lg:text-8xl">
+                        <div class="font-mono text-4xl font-medium lg:text-6xl">
                             {approach.index}
                         </div>
-                        <div class="text-3xl font-medium lg:text-4xl">
+                        <div class="text-3xl font-medium lg:text-4xl 2xl:tracking-tight">
                             {approach.title}
                         </div>
                         <div class="text-lg">{approach.description}</div>

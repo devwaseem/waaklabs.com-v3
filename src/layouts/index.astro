@@ -14,10 +14,6 @@ import DriftWidget from "../components/drift-widget.astro";
         <title>Astro</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <!-- <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap"
-            rel="stylesheet"
-        /> -->
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
@@ -26,11 +22,6 @@ import DriftWidget from "../components/drift-widget.astro";
             href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
             rel="stylesheet"
         />
-        <!-- <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-        /> -->
-        <link rel="stylesheet" href="/css/global.css" />
         <script
             defer
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
@@ -87,6 +78,19 @@ import DriftWidget from "../components/drift-widget.astro";
 </script>
 
 <style is:global>
+    [x-cloak] {
+        display: none !important;
+    }
+
+    ::-moz-selection {
+        /* Code for Firefox */
+        @apply bg-primary-800 text-white;
+    }
+
+    ::selection {
+        @apply bg-primary-800 text-white;
+    }
+
     .content {
         h1 {
             @apply mb-6 mt-16 text-4xl font-medium;

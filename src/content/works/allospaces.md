@@ -1,7 +1,7 @@
 ---
 title: Allospaces
-short_description: Allospaces brings together hundreds of co-working brands, cafes and hotels to give you one single access pass with unlimited options across Asia
-description: We are delighted to introduce you to Allospaces, an innovative platform designed to revolutionize your co-working experience. Allospaces seamlessly connects you to an extensive network of co-working spaces, cafes, and hotels across Asia, offering a single access pass with limitless possibilities.
+short_description: Allospaces brings together hundreds of co-working brands, cafes and hotels to give you one single access pass with unlimited options across Asia. Currently serving 13 Countries, with 500+ partners.
+description: We are delighted to introduce you to Allospaces, an innovative platform designed to revolutionize your co-working experience. Allospaces seamlessly connects you to an extensive network of co-working spaces, cafes, and hotels across Asia, offering a single access pass with limitless possibilities. Allospaces operates across 13 Countries, 500+ Space partners and 500+ Monthly Active Users.
 banner_image: "./images/allospaces/allospaces-mac.png"
 link: https://allospaces.com
 link_button_text: View Live Site
