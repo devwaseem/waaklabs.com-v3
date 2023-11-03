@@ -5,11 +5,21 @@ import ContactOptions from "../page-components/contact/contact-options.astro";
 import Testimonials from "../page-components/home/testimonials.astro";
 import Faq from "../page-components/home/faq.astro";
 import ParallaxMove from "../components/parallax-move.astro";
+
+const title = "Works | Waak Labs";
+const description =
+    "If you have a new project in mind or want to learn more about us and our process, You can reach out to us through live chat, schedule a call, or simply contact us. We're here to assist you.";
 ---
 
-<Layout>
-    <Hero />
+<Layout seoTitle={title} seoDescription={description}>
+    <Hero description={description} />
     <ContactOptions />
     <Testimonials disable_parallax />
     <Faq />
 </Layout>
+
+<script is:inline>
+    gtag("event", "screen_view", {
+        screen_name: "Contact",
+    });
+</script>

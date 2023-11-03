@@ -6,13 +6,23 @@ import AboutApproach from "../page-components/about-us/approach.astro";
 import AboutPrinciples from "../page-components/about-us/principles.astro";
 import Testimonials from "../page-components/home/testimonials.astro";
 import Faq from "../page-components/home/faq.astro";
+
+const title = "About us | Waak Labs";
+const description =
+    "We are your strategic partner in navigating the ever-evolving digital landscape. Our passion for innovation, creativity, and cutting-edge technology drives us to deliver exceptional results.";
 ---
 
-<Layout overlayText="About us">
-    <AboutHero />
+<Layout seoTitle={title} seoDescription={description}>
+    <AboutHero description={description} />
     <AboutAbout />
     <AboutApproach />
     <AboutPrinciples />
     <Testimonials disable_parallax />
     <Faq />
 </Layout>
+
+<script is:inline>
+    gtag("event", "screen_view", {
+        screen_name: "About us",
+    });
+</script>

@@ -11,11 +11,17 @@ import HoverScrollText from "../../components/hover-scroll-text.astro";
             have in mind.
         </div>
         <div class="mt-8 flex flex-col">
-            <a href="mailto:hello@waaklabs.com" class="group"
+            <a
+                onclick="gtag('event', 'Contact', { type: 'email' })"
+                href="mailto:hello@waaklabs.com"
+                class="group"
                 >E: <span class="group-hover:underline">hello@waaklabs.com</span
                 ></a
             >
-            <a href="tel:+918248899344" class="group mt-2"
+            <a
+                href="tel:+918248899344"
+                onclick="gtag('event', 'Contact', { type: 'phone' })"
+                class="group mt-2"
                 >P: <span class="group-hover:underline">+91 8248899344</span></a
             >
         </div>
@@ -38,7 +44,7 @@ import HoverScrollText from "../../components/hover-scroll-text.astro";
                 type="text/javascript"
                 async></script>
             <button
-                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/waak/meeting-with-waseem'});return false;"
+                onclick="gtag('event', 'Contact', { type: 'meeting', item: 'calendly' }); Calendly.initPopupWidget({url: 'https://calendly.com/waak/meeting-with-waseem'});return false;"
                 class="bg-primary-800 px-4 py-3 text-white"
                 ><HoverScrollText>
                     Schedule a Free Consultation
@@ -54,7 +60,9 @@ import HoverScrollText from "../../components/hover-scroll-text.astro";
             answers to your queries.
         </div>
         <div class="mt-8">
-            <button onclick="" class="bg-primary-800 px-4 py-3 text-white"
+            <button
+                onclick="gtag('event', 'Contact', { type: 'Live Chat', item: 'Drift' }); drift.api.openChat();"
+                class="bg-primary-800 px-4 py-3 text-white"
                 ><HoverScrollText>Start Chat</HoverScrollText></button
             >
         </div>

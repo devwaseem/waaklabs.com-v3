@@ -1,6 +1,6 @@
 ---
 slug: brickell
-title: Brickell
+title: Brickell.com
 short_description: A Real Estate and Lifestyle Portal Serving the Brickell & Miami Real Estate & Condo Market.
 description: "We're proud to introduce you to one of our latest web development achievements: Brickell.com. This project was built entirely from the ground up, utilizing cutting-edge technologies to ensure a seamless and remarkable online experience for our clients. Brickell.com now stands as a testament to our commitment to innovation and excellence."
 banner_image: "./images/brickell/brickell-mac.png"

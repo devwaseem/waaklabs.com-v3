@@ -3,10 +3,19 @@ import Layout from "../layouts/index.astro";
 import Hero from "../page-components/works/hero.astro";
 import Testimonials from "../page-components/home/testimonials.astro";
 import Projects from "../page-components/works/projects.astro";
+
+const title = "Works | Waak Labs";
+const description =
+    "See our work to experience how we create appealing digital solutions and help our clients grow their business";
 ---
 
-<Layout>
-    <Hero />
+<Layout seoTitle={title} seoDescription={description}>
+    <Hero description={description} />
     <Projects />
     <!-- <Testimonials disable_parallax /> -->
 </Layout>
+<script is:inline>
+    gtag("event", "screen_view", {
+        screen_name: "Works",
+    });
+</script>

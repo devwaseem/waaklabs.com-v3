@@ -1,6 +1,12 @@
 ---
 import MarqueeText from "../../components/marquee-text.astro";
 import ParallaxMove from "../../components/parallax-move.astro";
+
+interface Props {
+    description: string;
+}
+
+const { description } = Astro.props;
 ---
 
 <ParallaxMove>
@@ -15,10 +21,7 @@ import ParallaxMove from "../../components/parallax-move.astro";
                 </div>
                 <div
                     class="max-w-2xl text-lg font-medium md:text-3xl lg:text-4xl 2xl:tracking-tight">
-                    We are your strategic partner in navigating the
-                    ever-evolving digital landscape. Our passion for innovation,
-                    creativity, and cutting-edge technology drives us to deliver
-                    exceptional results.
+                    {description}
                 </div>
             </div>
             <div class="mt-10 max-w-sm font-medium">

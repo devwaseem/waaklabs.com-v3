@@ -6,6 +6,13 @@ const title = "Waak Labs — World Class Web & Mobile App Development Services";
 const description =
     "We are a full-service web and mobile app development company that helps businesses achieve their online potential.";
 const url = "https://waaklabs.com";
+
+interface Props {
+    seoTitle?: string;
+    seoDescription?: string;
+}
+
+const { seoTitle = title, seoDescription = description } = Astro.props;
 ---
 
 <>
@@ -29,8 +36,8 @@ const url = "https://waaklabs.com";
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={siteName} /> -->
     <AstroSeo
-        title={title}
-        description={description}
+        title={seoTitle}
+        description={seoDescription}
         openGraph={{
             url: url,
             title: title,
@@ -40,7 +47,7 @@ const url = "https://waaklabs.com";
                     url: Banner.src,
                     width: Banner.width,
                     height: Banner.height,
-                    alt: "Waaklabs - Design / Engineer / Grow",
+                    alt: "Waak labs - Design / Engineer / Grow",
                     type: Banner.format,
                 },
             ],

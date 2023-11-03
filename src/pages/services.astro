@@ -4,11 +4,21 @@ import Hero from "../page-components/services/hero.astro";
 import Services from "../page-components/services/services.astro";
 import Testimonials from "../page-components/home/testimonials.astro";
 import Faq from "../page-components/home/faq.astro";
+
+const title = "Services | Waak Labs";
+const description =
+    "Elevate your business with our cutting-edge software solutions and expertise in digital innovation";
 ---
 
-<Layout overlayText="Our Services">
-    <Hero />
+<Layout seoTitle={title} seoDescription={description}>
+    <Hero description={description} />
     <Services />
     <Testimonials disable_parallax />
     <Faq />
 </Layout>
+
+<script is:inline>
+    gtag("event", "screen_view", {
+        screen_name: "Services",
+    });
+</script>
