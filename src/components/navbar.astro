@@ -53,8 +53,17 @@ import NavbarMenu from "./navbar-menu.astro";
 <script>
     const localTimeElement = document.querySelector("#local-time")!;
     function updateTime() {
-        const timeNow = new Date();
-        const time = timeNow.toLocaleString("en-IN", {
+        var currentTime = new Date();
+
+        var currentOffset = currentTime.getTimezoneOffset();
+
+        var ISTOffset = 330; // IST offset UTC +5:30
+
+        var ISTTime = new Date(
+            currentTime.getTime() + (ISTOffset + currentOffset) * 60000,
+        );
+
+        const time = ISTTime.toLocaleString("en-IN", {
             hour: "numeric",
             minute: "numeric",
             hour12: true,

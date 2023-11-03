@@ -1,0 +1,107 @@
+---
+import { faqList } from "../data/faq";
+const faqSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "faqpage",
+    mainentity: faqList.map((faq) => ({
+        "@type": "question",
+        name: faq.question,
+        acceptedanswer: {
+            "@type": "answer",
+            text: faq.answer,
+        },
+    })),
+});
+---
+
+<>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "localbusiness",
+            "name": "waak labs",
+            "image": "",
+            "@id": "",
+            "url": "https://waaklabs.com",
+            "telephone": "8248899344",
+            "address": {
+                "@type": "postaladdress",
+                "streetaddress": "",
+                "addresslocality": "",
+                "postalcode": "",
+                "addresscountry": ""
+            },
+            "openinghoursspecification": {
+                "@type": "openinghoursspecification",
+                "dayofweek": [
+                    "monday",
+                    "wednesday",
+                    "tuesday",
+                    "thursday",
+                    "friday",
+                    "saturday",
+                    "sunday"
+                ],
+                "opens": "10:00",
+                "closes": "22:00"
+            },
+            "sameas": [
+                "https://twitter.com/waaklabs",
+                "https://www.instagram.com/waaklabs/",
+                "https://www.linkedin.com/company/waak-labs/"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "corporation",
+            "name": "waak labs",
+            "url": "https://waaklabs.com",
+            "logo": "",
+            "contactpoint": {
+                "@type": "contactpoint",
+                "telephone": "8248899344",
+                "contacttype": "customer service",
+                "availablelanguage": "en"
+            },
+            "sameas": [
+                "https://twitter.com/waaklabs",
+                "https://www.instagram.com/waaklabs/",
+                "https://www.linkedin.com/company/waak-labs/",
+                "https://github.com/devwaseem/",
+                "https://waaklabs.com"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "person",
+            "name": "waseem akram",
+            "url": "https://waaklabs.com",
+            "image": "",
+            "sameas": [
+                "https://www.instagram.com/waaklabs/",
+                "https://twitter.com/waaklabs",
+                "https://www.linkedin.com/company/waak-labs/",
+                "https://github.com/devwaseem/",
+                "https://waaklabs.com"
+            ],
+            "jobtitle": "founder & ceo",
+            "worksfor": {
+                "@type": "organization",
+                "name": "waak labs"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "website",
+            "name": "waak labs",
+            "url": "https://waaklabs.com"
+        }
+    </script>
+    <script type="application/ld+json" set:html={faqSchema} />
+</>

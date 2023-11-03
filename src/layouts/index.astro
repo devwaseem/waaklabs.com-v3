@@ -4,6 +4,7 @@ import Footer from "../components/footer.astro";
 import NavbarMenu from "../components/navbar-menu.astro";
 import DriftWidget from "../components/drift-widget.astro";
 import Seo from "../components/seo.astro";
+import Schema from "../components/schema.astro";
 ---
 
 <html lang="en">
@@ -66,6 +67,38 @@ import Seo from "../components/seo.astro";
         ></script>
         <script src="/js/utils.js" type="text/javascript"></script>
         <script src="/js/page-animations.js" type="text/javascript"></script>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-T8CRE0X4Y2"
+        ></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-T8CRE0X4Y2");
+        </script>
+        <!-- Microsoft clarity: begin -->
+        <meta name="msvalidate.01" content="CCD6C206EF0549FD4DE309F6E8957BF4" />
+        <script type="text/javascript" is:inline>
+            (function (c, l, a, r, i, t, y) {
+                c[a] =
+                    c[a] ||
+                    function () {
+                        (c[a].q = c[a].q || []).push(arguments);
+                    };
+                t = l.createElement(r);
+                t.async = 1;
+                t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "j98vbhwdsx");
+        </script>
+        <!-- Microsoft clarity: end -->
+        <Schema />
     </head>
     <body
         x-data
@@ -81,64 +114,63 @@ import Seo from "../components/seo.astro";
         </main>
         <NavbarMenu />
         <DriftWidget />
+        <script is:inline>
+            document.addEventListener("DOMContentLoaded", () => {
+                gsap.registerPlugin(ScrollTrigger);
+            });
+
+            document.addEventListener("alpine:init", () => {
+                Alpine.store("NavMenu", {
+                    isMenuOpen: false,
+                    toggleMenu() {
+                        this.isMenuOpen = !this.isMenuOpen;
+                    },
+                });
+            });
+        </script>
+
+        <style is:global>
+            [x-cloak] {
+                display: none !important;
+            }
+
+            ::-moz-selection {
+                /* Code for Firefox */
+                @apply bg-primary-800 text-white;
+            }
+
+            ::selection {
+                @apply bg-primary-800 text-white;
+            }
+
+            .content {
+                h1 {
+                    @apply mb-6 mt-16 text-4xl font-medium;
+                }
+
+                h2 {
+                    @apply mb-6 mt-12 text-3xl font-medium;
+                }
+                h3 {
+                    @apply mb-6 mt-12 text-2xl font-medium;
+                }
+                h4 {
+                    @apply mb-6 mt-12 text-xl font-medium;
+                }
+                h5 {
+                    @apply mb-4 mt-10 text-lg font-medium;
+                }
+                h6 {
+                    @apply mb-4 mt-10 text-lg font-medium;
+                }
+                p {
+                    @apply mb-6 text-lg;
+                }
+
+                img {
+                    @apply my-20 max-h-[70vh] object-contain;
+                }
+            }
+        </style>
     </body>
 </html>
-
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        gsap.registerPlugin(ScrollTrigger);
-    });
-
-    document.addEventListener("alpine:init", () => {
-        Alpine.store("NavMenu", {
-            isMenuOpen: false,
-            toggleMenu() {
-                this.isMenuOpen = !this.isMenuOpen;
-            },
-        });
-    });
-</script>
-
-<style is:global>
-    [x-cloak] {
-        display: none !important;
-    }
-
-    ::-moz-selection {
-        /* Code for Firefox */
-        @apply bg-primary-800 text-white;
-    }
-
-    ::selection {
-        @apply bg-primary-800 text-white;
-    }
-
-    .content {
-        h1 {
-            @apply mb-6 mt-16 text-4xl font-medium;
-        }
-
-        h2 {
-            @apply mb-6 mt-12 text-3xl font-medium;
-        }
-        h3 {
-            @apply mb-6 mt-12 text-2xl font-medium;
-        }
-        h4 {
-            @apply mb-6 mt-12 text-xl font-medium;
-        }
-        h5 {
-            @apply mb-4 mt-10 text-lg font-medium;
-        }
-        h6 {
-            @apply mb-4 mt-10 text-lg font-medium;
-        }
-        p {
-            @apply mb-6 text-lg;
-        }
-
-        img {
-            @apply my-20 max-h-[70vh] object-contain;
-        }
-    }
-</style>
