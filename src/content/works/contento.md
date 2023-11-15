@@ -20,6 +20,8 @@ tech_stack:
 
 ![](./images/contento/contento-mac.png)
 
+_More Screenshots of the App available at the bottom of the page._
+
 ## **Key Features**
 
 -   **GPT 3 Integration:** Bridge seamlessly integrates with GPT-3 for enhanced content creation.

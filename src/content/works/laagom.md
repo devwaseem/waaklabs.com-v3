@@ -17,6 +17,8 @@ tech_stack:
 
 ![](./images/laagom/laagom-mac.png)
 
+_More Screenshots of the App available at the bottom of the page._
+
 ## **Key Features**
 
 Our collaborative landing and marketing page for Laagom offers remarkable features, including:

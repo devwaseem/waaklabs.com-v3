@@ -1,25 +1,65 @@
 ---
 import { Image } from "astro:assets";
 import AlloLogo from "../../assets/images/clients/Allospaces.png";
+import AdwiserLogo from "../../assets/images/clients/Adwiser.png";
+import BrickellLogo from "../../assets/images/clients/Brickell.png";
+import AncoraaLogo from "../../assets/images/clients/Ancoraa.png";
 import BigTitle from "../../components/big-title.astro";
 import ParallaxMove from "../../components/parallax-move.astro";
+import MinimalButton from "../../components/minimal-button.astro";
+import ParallaxProject from "../../components/parallax-project.astro";
 
 interface Testimonial {
+    id: string;
     logo: ImageMetadata;
     company: string;
     name: string;
     designation: string;
+    youtubeVideo?: string;
     testimonial: string;
+    caseStudyLink?: string;
 }
 
 const testimonials: Testimonial[] = [
     {
+        id: "brickell",
+        logo: BrickellLogo,
+        name: "Andres Larin",
+        company: "Brickell.com",
+        designation: "Founder, Brickell.com",
+        caseStudyLink: "/works/brickell",
+        youtubeVideo:
+            "https://www.youtube.com/embed/yGLFw8d00yM?si=9Y9PaOrA37kmqBvW",
+        testimonial:
+            "Waseem is the best developer I've ever worked with! Incredibly skilled, versatile, great communicator, and very attentive to details. He went above and beyond and made great suggestions for my website, Brickell.com. I would highly recommend!",
+    },
+    {
+        id: "allospaces",
         logo: AlloLogo,
         name: "Pranav Ashok",
         company: "Allospaces",
         designation: "Co-Founder, Allospaces",
+        caseStudyLink: "/works/allospaces",
         testimonial:
             "Waseem has a true passion for building. His ability to break down a complex problem and structure it out is fantastic and he was instrumental in building allo spaces for us! He is proactive and preempts risks and downsides of, minimising them through creative solutions. A must have for anyone building an MVP!",
+    },
+    // {
+    //     logo: AncoraaLogo,
+    //     name: "Sushant Haritas",
+    //     company: "Ancoraa",
+    //     designation: "Co-Founder, Ancoraa",
+    //     testimonial:
+    //         "Waseem is a smart developer with an obsession with product quality. He has a knack for finding unorthodox solutions to technology problems. We are thankful for his work on various features of Rezolution Engine and AI chatbot.",
+    // },
+    {
+        id: "adwiser",
+        logo: AdwiserLogo,
+        name: "Ranjan Varma",
+        company: "Adwiser",
+        designation: "Founder, Adwiser",
+        caseStudyLink: "/works/adwiser",
+        testimonial:
+            "Waseem is a pleasure to work with because he works hard to understand your tech requirements. And then he goes ahead with various ideas and suggestions that can make the solution make sense to the users. Pleasure working with you, Waseem. All the best!",
     },
 ];
 
@@ -37,30 +77,55 @@ const { disable_parallax = false } = Astro.props;
                 caption="Testimonials"
                 description="See what our customers and partners have to say about us."
             />
-            <div class="mt-24 grid grid-cols-1 lg:grid-cols-2">
+            <ul class="mt-24 columns-1 break-inside-avoid-column lg:columns-2">
                 {
                     testimonials.map((testimonial) => (
-                        <div class="flex h-[600px] flex-col justify-between bg-gray-50 p-10">
-                            <div>
-                                <Image
-                                    src={testimonial.logo}
-                                    alt={`Logo of ${testimonial.company}`}
-                                    class="inline-block w-[200px] object-cover"
-                                />
-                                <div class="mt-6 text-lg">
-                                    {testimonial.testimonial}
+                        <li
+                            id={"testimonial-" + testimonial.id}
+                            class="mt-4 break-inside-avoid-column">
+                            <div class="flex min-h-[500px] flex-col justify-between bg-gray-50 p-10">
+                                <div>
+                                    <Image
+                                        src={testimonial.logo}
+                                        alt={`Logo of ${testimonial.company}`}
+                                        class="inline-block w-[200px] object-cover object-left"
+                                    />
+                                    {testimonial.youtubeVideo ? (
+                                        <div class="my-6">
+                                            <iframe
+                                                src={testimonial.youtubeVideo}
+                                                title="YouTube video player"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen
+                                                class="h-[200px] w-full md:h-[400px]"
+                                            />
+                                        </div>
+                                    ) : null}
+                                    <div class="mt-6 text-lg">
+                                        {testimonial.testimonial}
+                                    </div>
+
+                                    {testimonial.caseStudyLink ? (
+                                        <div class="mt-10">
+                                            <MinimalButton
+                                                openInNewTab
+                                                text="View Case Study"
+                                                href={testimonial.caseStudyLink}
+                                            />
+                                        </div>
+                                    ) : null}
+                                </div>
+                                <div class="mt-10">
+                                    <div class="text-xl font-bold">
+                                        {testimonial.name}
+                                    </div>
+                                    <div>{testimonial.designation}</div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="text-xl font-bold">
-                                    {testimonial.name}
-                                </div>
-                                <div>{testimonial.designation}</div>
-                            </div>
-                        </div>
+                        </li>
                     ))
                 }
-            </div>
+            </ul>
         </div>
     </section>
 </ParallaxMove>

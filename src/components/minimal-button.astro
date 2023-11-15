@@ -2,13 +2,15 @@
 interface Props {
     text: string;
     href: string;
+    openInNewTab?: boolean;
 }
 
-const { text, href } = Astro.props;
+const { text, href, openInNewTab = false } = Astro.props;
 ---
 
 <a
     href={href}
+    target={openInNewTab ? "_blank" : ""}
     class="group mt-4 flex max-w-fit flex-row items-center gap-2 rounded bg-gray-100 py-1 pl-3 pr-1 font-mono text-xs font-bold uppercase transition-colors duration-300 will-change-transform hover:bg-gray-200">
     <div class="transition-transform duration-300 group-hover:translate-x-1">
         {text}

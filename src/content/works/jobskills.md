@@ -21,6 +21,10 @@ tech_stack:
     - AWS
 ---
 
+![](./images/jobskills/jobskills-mac.png)
+
+_More Screenshots of the App available at the bottom of the page._
+
 ## **Key Features**
 
 -   **Training Center Dashboard:** Empowering training centers with efficient management tools.

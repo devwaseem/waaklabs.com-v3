@@ -22,6 +22,8 @@ tech_stack:
 
 ![](./images/bridge/bridge-mac.png)
 
+_More Screenshots of the App available at the bottom of the page._
+
 ## **Simplified Management**
 
 Bridge offers streamlined management with dedicated dashboards:

@@ -20,6 +20,8 @@ tech_stack:
 
 ![Allospaces.com on Macbook Air](./images/allospaces/allospaces-mac.png)
 
+_More Screenshots of the App available at the bottom of the page._
+
 Allospaces empowers you with unparalleled flexibility and convenience, enabling you to access a diverse range of co-working environments in Asia with a single, unified pass.
 
 ## **Key Features**

@@ -54,10 +54,12 @@
     })();
     drift.SNIPPET_VERSION = "0.3.1";
     drift.load("b6fxhaaiytif");
-    drift.on("ready", (api, payload) => {
-        setTimeout(() => {
-            api.showWelcomeMessage();
-        }, 3000);
-    });
+    if (window.screen.width > 400) {
+        drift.on("ready", (api, payload) => {
+            setTimeout(() => {
+                api.showWelcomeMessage();
+            }, 3000);
+        });
+    }
 </script>
 <!-- End of Async Drift Code -->

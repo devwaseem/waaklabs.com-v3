@@ -17,6 +17,8 @@ tech_stack:
 
 ![](./images/tempbox/tempbox-mac.png)
 
+_More Screenshots of the App available at the bottom of the page._
+
 ## **Mac App Development Excellence**
 
 At Waak Labs, we're proud to introduce Tempbox, a Mac application that aligns seamlessly with the Mac ecosystem, ensuring a user-friendly experience.

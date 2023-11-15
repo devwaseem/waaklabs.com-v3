@@ -2,7 +2,7 @@
 slug: brickell
 title: Brickell.com
 short_description: A Real Estate and Lifestyle Portal Serving the Brickell & Miami Real Estate & Condo Market.
-description: "We're proud to introduce you to one of our latest web development achievements: Brickell.com. This project was built entirely from the ground up, utilizing cutting-edge technologies to ensure a seamless and remarkable online experience for our clients. Brickell.com now stands as a testament to our commitment to innovation and excellence."
+description: "We're proud to introduce you to one of our latest web development achievements: Brickell.com. This project was built entirely from the ground up, utilizing cutting-edge technologies to ensure a seamless and remarkable online experience for our clients. With the new design, We have reduced the bounce rate by 50%, currently receiving more than 10-20K traffic per month. Brickell.com now stands as a testament to our commitment to innovation and excellence."
 banner_image: "./images/brickell/brickell-mac.png"
 link: https://brickell.com
 link_button_text: View Live Site
@@ -32,6 +32,8 @@ tech_stack:
 
 ![Brickell.com on Macbook Air](./images/brickell/brickell-mac.png)
 
+_More Screenshots of the App available at the bottom of the page._
+
 ## **Minimalistic Design**
 
 One of the standout features of Brickell.com is its new minimalistic design. We've crafted a sleek, user-friendly interface that not only captures visitors' attention but also encourages them to stay longer on the website. Our design choices are deliberate, focusing on simplicity, elegance, and easy navigation, creating an unparalleled user experience.
@@ -46,7 +48,7 @@ To cater to the unique needs of our clients, we've developed an advanced Content
 
 ## **Setting the Bar for the Competition**
 
-Brickell.com is not just another website; it's a superior platform that outshines its competitors. Our advanced search engine is a prime example of our commitment to excellence. It offers an array of robust filters, allowing users to fine-tune their property searches. With our cutting-edge technology, finding the perfect listing has never been easier.
+Brickell.com is not just another website; it's a superior platform that outshines its competitors. It's advanced search engine is a prime example of our commitment to excellence. It offers an array of robust filters, allowing users to fine-tune their property searches. With our cutting-edge technology, finding the perfect listing has never been easier.
 
 ## **Empower Your Online Presence with Waak Labs**
 

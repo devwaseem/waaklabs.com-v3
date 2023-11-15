@@ -12,7 +12,7 @@ const { startAt = 100, disable = false, padding = true } = Astro.props;
 ---
 
 <div id={id}>
-    <div class={!disable ? (padding ? "md:pb-[400px]" : "") : ""}>
+    <div class={!disable ? (padding ? "md:pb-[800px] lg:pb-[500px]" : "") : ""}>
         <slot />
     </div>
 </div>

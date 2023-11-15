@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import BrickellTestimonialThumbnail from "../../assets/images/brickell-testimonial-thumbnail.png";
 import ParallaxMove from "../../components/parallax-move.astro";
 import MarqueeText from "../../components/marquee-text.astro";
 ---
@@ -29,6 +31,58 @@ import MarqueeText from "../../components/marquee-text.astro";
                 >
             </div>
         </div>
+        <a href="#testimonial-brickell" class="group relative">
+            <div
+                class="rounded-full px-4 py-2 transition-colors duration-300 will-change-transform group-hover:bg-primary-800 group-hover:text-white">
+                <div
+                    class="relative z-20 flex flex-row items-center justify-center gap-4">
+                    <span class="relative h-4 w-4">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="absolute"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                            ></path><path
+                                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                                stroke-width="0"
+                                fill="currentColor"></path></svg
+                        >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="absolute animate-ping"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                            ></path><path
+                                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                                stroke-width="0"
+                                fill="currentColor"></path></svg
+                        >
+                    </span>
+                    <span class="">View our recent testimonial</span>
+                </div>
+            </div>
+            <Image
+                src={BrickellTestimonialThumbnail}
+                width="400"
+                height="450"
+                alt="Image of Waseem, Founder of Waak Labs and Andres Larin, Founder or Brickell.com talking heads"
+                class="absolute -top-1/2 right-0 z-20 h-32 w-32 rotate-12 rounded-lg opacity-0 transition-opacity duration-300 will-change-transform group-hover:opacity-100"
+            />
+        </a>
         <div
             class="absolute bottom-[-4%] hidden overflow-hidden will-change-transform md:block lg:bottom-[-10%]">
             <MarqueeText text="WE ARE WAAKLABS" disableOnSmallDevices />
