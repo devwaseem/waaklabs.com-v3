@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import AlloLogo from "../../assets/images/clients/Allospaces.png";
 import AdwiserLogo from "../../assets/images/clients/Adwiser.png";
 import BrickellLogo from "../../assets/images/clients/Brickell.png";
+import ContentoLogo from "../../assets/images/clients/Contento.png";
 import AncoraaLogo from "../../assets/images/clients/Ancoraa.png";
 import BigTitle from "../../components/big-title.astro";
 import ParallaxMove from "../../components/parallax-move.astro";
@@ -34,6 +35,17 @@ const testimonials: Testimonial[] = [
             "Waseem is the best developer I've ever worked with! Incredibly skilled, versatile, great communicator, and very attentive to details. He went above and beyond and made great suggestions for my website, Brickell.com. I would highly recommend!",
     },
     {
+        id: "contento",
+        logo: ContentoLogo,
+        name: "Jose Larin",
+        company: "Contento AI",
+        designation: "Co-Founder, Contento AI",
+        caseStudyLink: "/works/contento",
+        youtubeVideo:
+            "https://www.youtube.com/embed/tSjaUdC0uMU?si=ov43BKkhhJ5V2VG1",
+        testimonial: "",
+    },
+    {
         id: "allospaces",
         logo: AlloLogo,
         name: "Pranav Ashok",
@@ -43,14 +55,15 @@ const testimonials: Testimonial[] = [
         testimonial:
             "Waseem has a true passion for building. His ability to break down a complex problem and structure it out is fantastic and he was instrumental in building allo spaces for us! He is proactive and preempts risks and downsides of, minimising them through creative solutions. A must have for anyone building an MVP!",
     },
-    // {
-    //     logo: AncoraaLogo,
-    //     name: "Sushant Haritas",
-    //     company: "Ancoraa",
-    //     designation: "Co-Founder, Ancoraa",
-    //     testimonial:
-    //         "Waseem is a smart developer with an obsession with product quality. He has a knack for finding unorthodox solutions to technology problems. We are thankful for his work on various features of Rezolution Engine and AI chatbot.",
-    // },
+    {
+        id: "ancoraa",
+        logo: AncoraaLogo,
+        name: "Sushant Haritas",
+        company: "Ancoraa",
+        designation: "Co-Founder, Ancoraa",
+        testimonial:
+            "Waseem is a smart developer with an obsession with product quality. He has a knack for finding unorthodox solutions to technology problems. We are thankful for his work on various features of Rezolution Engine and AI chatbot.",
+    },
     {
         id: "adwiser",
         logo: AdwiserLogo,
